@@ -7,10 +7,11 @@ import htw.berlin.wi.prog2.service.SimpleInputParser;
 import htw.berlin.wi.prog2.service.BurgerBuilder;
 import htw.berlin.wi.prog2.ui.CommandLineUI;
 import htw.berlin.wi.prog2.ui.UserInputWrapper;
+import htw.berlin.wi.prog2.domain.InputParser;
 
 public class BurgerBotApp {
     public static void main(String[] args) {
-        SimpleInputParser parser = new SimpleInputParser();
+        InputParser parser = new SimpleInputParser();
         BurgerBuilder builder = new BurgerBuilder();
         UserInputWrapper wrapper = new UserInputWrapper(System.in, System.out);
         CommandLineUI clui = new CommandLineUI(wrapper, builder, parser);
