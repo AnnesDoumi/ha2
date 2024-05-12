@@ -86,6 +86,15 @@ class BurgerBuilderTest {
     // TODO hier mind. einen Test hinzufügen, der das korrekte Werfen der IllegalBurgerException testet (assertThrows)
 
 
+    @Test
+    public void testBurgerBuilderThrowsExceptionWithLessThanTwoIngredients() {
+        BurgerBuilder builder = new BurgerBuilder();
+        builder.add(new Ingredient("Brot", 1.0, 100));
 
-
+        assertThrows(IllegalBurgerException.class, builder::buildPrecomputed, "Wenn für PreComputed weniger als zwei Zutaten vorhanden sind, wird eine IllegalBurgerException geworfen");
+        assertThrows(IllegalBurgerException.class, builder::buildDynamicallyComputed, "Wenn für DynamicallyComputed weniger als zwei Zuaten vorhanden sind, wird eine IllegalBurgerException geworfen.");
+    }
 }
+
+
+
