@@ -87,6 +87,7 @@ class BurgerBuilderTest {
 
 
     @Test
+    @DisplayName("IllegalException bei weniger als zwei Zutaten")
     public void testBurgerBuilderThrowsExceptionWithLessThanTwoIngredients() {
         BurgerBuilder builder = new BurgerBuilder();
         builder.add(new Ingredient("Brot", 1.0, 100));
